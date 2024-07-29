@@ -1,0 +1,46 @@
+﻿<Window
+    x:Class="Particles.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Particles"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="particles"
+    Title="Orbs"
+    Width="270"
+    Height="1030"
+    Activated="particles_Activated"
+    AllowsTransparency="True"
+    Background="Transparent"
+    Deactivated="particles_Deactivated"
+    Icon="icon.ico"
+    Initialized="particles_Initialized"
+    MouseDown="particles_MouseDown"
+    ResizeMode="CanResizeWithGrip"
+    SizeChanged="particles_SizeChanged"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Canvas
+        Name="canvas"
+        Grid.Row="0"
+        Grid.RowSpan="100"
+        Grid.Column="0"
+        Grid.ColumnSpan="100"
+        Width="Auto"
+        Height="Auto"
+        Margin="4,10,4,2"
+        Background="Transparent"
+        MouseDown="canvas_MouseDown">
+
+        <!--
+            https://docs.microsoft.com/en-us/dotnet/desktop/wpf/graphics-multimedia/how-to-improve-rendering-performance-by-caching-an-element?view=netframeworkdesktop-4.8
+        -->
+        <Canvas.CacheMode>
+            <BitmapCache
+                EnableClearType="False"
+                RenderAtScale="1"
+                SnapsToDevicePixels="False" />
+        </Canvas.CacheMode>
+    </Canvas>
+</Window>
